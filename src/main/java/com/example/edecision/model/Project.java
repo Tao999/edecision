@@ -7,17 +7,17 @@ import java.util.HashMap;
 
 public class Project {
 
-    private String id;
+    private Integer id;
     private String title;
     private String description;
     private ArrayList<Decision>decisions;
-    private HashMap<Developer,Role>participants;
+    private HashMap<Member,Role>participants;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -45,11 +45,11 @@ public class Project {
         this.decisions = decisions;
     }
 
-    public HashMap<Developer, Role> getParticipants() {
+    public HashMap<Member, Role> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(HashMap<Developer, Role> participants) {
+    public void setParticipants(HashMap<Member, Role> participants) {
         this.participants = participants;
     }
 }

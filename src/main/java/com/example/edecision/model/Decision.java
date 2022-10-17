@@ -3,17 +3,17 @@ package com.example.edecision.model;
 import java.util.Date;
 
 public class Decision {
-    private String id;
+    private Integer id;
     private String name;
     private String description;
     private Date delay;
     private Date creation_date;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
