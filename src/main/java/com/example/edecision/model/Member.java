@@ -1,18 +1,25 @@
 package com.example.edecision.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 
+@Entity
 public class Member {
 
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
-    private ArrayList<Decision> decisions;
 
-    public Integer getId() {
+    @ManyToMany
+    private Collection<Team> teams ;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -24,11 +31,5 @@ public class Member {
         this.name = name;
     }
 
-    public ArrayList<Decision> getDecisions() {
-        return decisions;
-    }
 
-    public void setDecisions(ArrayList<Decision> decisions) {
-        this.decisions = decisions;
-    }
 }

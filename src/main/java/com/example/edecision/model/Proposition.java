@@ -1,24 +1,17 @@
 package com.example.edecision.model;
 
-import com.example.edecision.utils.Role;
-
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
 @Entity
-public class Project {
-
+public class Proposition {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
+    private String name;
     private String description;
-
-    @ManyToMany
-    private Collection<Team> Teams;
-
-
 
     public Long getId() {
         return id;
@@ -28,12 +21,12 @@ public class Project {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {

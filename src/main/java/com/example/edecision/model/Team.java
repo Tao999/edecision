@@ -1,21 +1,28 @@
 package com.example.edecision.model;
 
-import com.example.edecision.utils.TypeTeam;
+import javax.persistence.*;
+import java.util.Collection;
 
-import java.util.ArrayList;
-
+@Entity
 public class Team {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
 
-    private ArrayList <Member> Members;
-    private TypeTeam typeTeam;
+    @OneToOne
+    private TypeTeam typeTeam ;
 
-    public Integer getId() {
+    @ManyToMany
+    private Collection<Member> members;
+
+    @ManyToMany
+    private Collection<Project> projects;
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -27,19 +34,5 @@ public class Team {
         this.name = name;
     }
 
-    public ArrayList<Member> getMembers() {
-        return Members;
-    }
 
-    public void setMembers(ArrayList<Member> members) {
-        Members = members;
-    }
-
-    public TypeTeam getTypeTeam() {
-        return typeTeam;
-    }
-
-    public void setTypeTeam(TypeTeam typeTeam) {
-        this.typeTeam = typeTeam;
-    }
 }
