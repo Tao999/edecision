@@ -1,4 +1,4 @@
 package com.example.edecision.controller;
 
-public class DeveloperController {
+public class MemberController {
 }
